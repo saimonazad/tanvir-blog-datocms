@@ -1,5 +1,7 @@
 const isDev = process.env.NODE_ENV === 'development';
-
+require('dotenv').config({
+  path: `.env`,
+});
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://headlessmultilingual.gatsbyjs.io',
@@ -28,7 +30,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-datocms',
       options: {
-        apiToken: '87cdc55b15aa843368e8df1531e7b4',
+        apiToken: process.env.NEXT_PUBLIC_DATO_TOKEN,
         localeFallbacks: {
           'ar-AE': 'en',
         },
